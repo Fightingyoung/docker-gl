@@ -1,0 +1,6 @@
+glxgears:
+  image: infomaniac50/docker-gl
+  container_name: glxgears
+  extends:
+    file: common.yml
+    service: x11
