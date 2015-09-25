@@ -4,3 +4,6 @@ glxgears:
   extends:
     file: common.yml
     service: x11
+  user: developer
+  environment:
+    HOME: /home/developer

@@ -8,6 +8,12 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get install -y mesa-utils && \
     apt-get install -y mesa-utils-extra
 
+# Install all the things
+# RUN apt-get update && apt-get -y upgrade
+#     # Install GLXGears
+# RUN apt-get install -y mesa-utils
+# RUN apt-get install -y mesa-utils-extra
+
 # Replace 1000 with your user / group id
 RUN export uid=1000 gid=1000 && \
     mkdir -p /home/developer && \
@@ -20,10 +26,6 @@ RUN export uid=1000 gid=1000 && \
     cp /etc/skel/.bashrc /home/developer && \
     cp /etc/skel/.profile /home/developer && \
     chown ${uid}:${gid} -R /home/developer
-
-USER developer
-
-ENV HOME /home/developer
 
 ENV LIBGL_DEBUG verbose
 
